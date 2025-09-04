@@ -74,7 +74,7 @@ export default function WeatherCard({ theme = "light", onMetaChange }) {
   const [coords, setCoords] = useState(null);
   const [data, setData] = useState(null);
   const [dailyForecast, setDailyForecast] = useState(null);
-  const [shareMessage, setShareMessage] = useState(""); // ✅ for copy feedback
+  const [shareMessage, setShareMessage] = useState(""); // for copy feedback
   const lastFetchRef = useRef({ lat: null, lon: null, unit: null });
 
   const cardClass = useMemo(
@@ -173,7 +173,7 @@ export default function WeatherCard({ theme = "light", onMetaChange }) {
 
         fetchWeatherAt({ lat, lon, unitToUse: unit, placeLabel: label });
       },
-      () => setError("Could not get your location."),
+      () => setError("getting your location..."),
       { enableHighAccuracy: true, timeout: 8000 }
     );
   }, [fetchWeatherAt, reverseLabel, unit]);
@@ -205,7 +205,7 @@ export default function WeatherCard({ theme = "light", onMetaChange }) {
     }
   };
 
-  // ✅ Share weather link
+  // Share weather link
   const handleShare = async () => {
     if (!displayName) return;
     const city = displayName.split(",")[0]; // just take city name
