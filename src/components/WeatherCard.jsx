@@ -160,33 +160,18 @@ export default function WeatherCard({ theme = "light", onMetaChange }) {
 
   // On load → detect location & fetch
   useEffect(() => {
-    if (!navigator.geolocation) {
-      setError("Geolocation is not supported by your browser.");
-      return;
-    }
-
-    setLoading(true);
-
+    if (!navigator.geolocation) return;
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         const lat = pos.coords.latitude;
         const lon = pos.coords.longitude;
         setCoords({ lat, lon });
-
         const place = await reverseLabel(lat, lon);
         const label = place || "Live location";
         setDisplayName(label);
-
         fetchWeatherAt({ lat, lon, unitToUse: unit, placeLabel: label });
       },
-      (err) => {
-        if (err.code === 1) {
-          // User denied
-          setError("Location access denied. Please search manually.");
-        } else {
-          setError("Could not get your location.");
-        }
-      },
+      () => setError("Could not get your location."),
       { enableHighAccuracy: true, timeout: 8000 }
     );
   }, [fetchWeatherAt, reverseLabel, unit]);
