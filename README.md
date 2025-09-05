@@ -1,12 +1,28 @@
-# React + Vite
+A modern weather application built with React + Vite, TailwindCSS, and Framer Motion.
+It provides real-time weather updates, 7-day forecasts, search functionality, and light/dark themes — all with a smooth, responsive design.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Features
 
-Currently, two official plugins are available:
+🌍 Search any city and get real-time weather data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌡️ Temperature toggle between Celsius (°C) and Fahrenheit (°F).
 
-## Expanding the ESLint configuration
+📅 7-day forecast with min/max temperature and icons.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🌙 Light/Dark theme with persistence in local storage.
+
+📤 Shareable links to send weather info to others.
+
+🎨 Dynamic backgrounds that change based on weather and time of day.
+
+🛠️ Tech Stack
+=> React + Vite (Frontend framework)
+=> TailwindCSS (Styling)
+=> Framer Motion (Animations)
+=> React Icons (Weather icons)
+=> Open-Meteo API (Weather & Forecast data)
+
+🌐 Deployment
+
+The app is deployed on Vercel.
+👉 Live Demo Link => https://weather-now-sepia-ten.vercel.app/
